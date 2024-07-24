@@ -2,6 +2,8 @@ import Login from "./views/Login";
 import Profile from "./views/Profile";
 import Register from "./views/Register";
 import Home from "./views/Home";
+import DispatchForm from "./views/DispatchForm";
+import DispatchFormPage from "./views/DispatchFormPage";
 import LeftoverIngredientForm from "./views/LeftoverIngredientForm";
 import LeftoverIngredientPage from "./views/LeftoverIngredientPage";
 import LeftoversTurnoverForm from "./views/LeftoversTurnoverForm";
@@ -42,6 +44,16 @@ const routes = [
     name: "EditProfile",
     path: "/editprofile",
     element: <EditProfile />,
+  },
+  {
+    name: "DispatchForm",
+    path: "/dispatchform",
+    element: <DispatchForm />,
+  },
+  {
+    name: "DispatchFormPage",
+    path: "/dispatchformpage",
+    element: <DispatchFormPage />,
   },
   {
     name: "LeftoverIngredientForm",

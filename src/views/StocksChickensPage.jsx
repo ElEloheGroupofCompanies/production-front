@@ -48,6 +48,8 @@ const StocksChickensPage = () => {
               <th>Dispatch AM</th>
               <th>Dispatch PM</th>
               <th>Ending Stocks</th>
+              <th>Ending Stocks for Whole Chicken</th>
+              <th>Total Marinated Chickens</th>
             </tr>
           </thead>
           <tbody>
@@ -59,6 +61,8 @@ const StocksChickensPage = () => {
                 <td>{stockschickens.dispatch_AM}</td>
                 <td>{stockschickens.dispatch_PM}</td>
                 <td>{stockschickens.ending_stocks}</td>
+                <td>{stockschickens.ending_whole_chicken}</td>
+                <td>{stockschickens.total_marinated_chicken}</td>
               </tr>
             ))}
           </tbody>
