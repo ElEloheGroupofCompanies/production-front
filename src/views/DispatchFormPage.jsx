@@ -10,7 +10,7 @@ const DispatchFormPage = () => {
     const { getItem } = useLocalStorage();
     const token = getItem("token");
     const api = useApi(token);
-    const [DispatchForm, setDispatchForms] = useState([]);
+    const [DispatchForms, setDispatchForms] = useState([]);
     const [user, _] = useState(JSON.parse(getItem("user") || null));
 
     useEffect(() => {
@@ -72,7 +72,7 @@ const DispatchFormPage = () => {
             </tr>
         </thead>
         <tbody>
-          {DispatchForm.map((dispatchforms) => (
+          {DispatchForms.map((dispatchforms) => (
             <tr key={dispatchforms.id}>
               <td>{dispatchforms.date_dispatched}</td>
               <td>{dispatchforms.location}</td>
