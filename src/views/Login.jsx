@@ -11,6 +11,7 @@ function Login() {
   const { setItem } = useLocalStorage();
   const [email_address, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const api = useApi();
   const navigate = useNavigate();
 
@@ -58,7 +59,11 @@ function Login() {
               controlId="formBasicPassword"
             >
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control
+                type={showPassword ? "text" : "password"} // Change the type based on the state
+                placeholder="Password"
+                onClick={() => setShowPassword(!showPassword)} // Toggle password visibility on click
+              />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit
