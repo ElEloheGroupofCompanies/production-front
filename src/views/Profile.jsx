@@ -65,6 +65,13 @@ function Profile() {
         >
           Stock Transfer
         </Button>
+        <Button
+          className="mt-3 text-dark" 
+          variant="outline-danger" 
+          as={Link} 
+          to="/dispatchformpage">
+          Dispatch Form
+        </Button>
 
         <DropdownButton
           className="mt-3 text-dark"
