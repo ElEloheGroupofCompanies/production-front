@@ -36,7 +36,7 @@ const DispatchForm = () => {
     const [flour, setFlour] = useState("");
     const [free_flour, setFreeFlour] = useState("");
     const [free_10x14, setFree10x14] = useState("");
-    const [free_paper_bag, setFreePaperBag] = useState("");
+    const [free_paperbag, setFreePaperBag] = useState("");
     const [free_patok, setFreePatok] = useState("");
     const [free_vinegar1_5L, setFreeVinegar15L] = useState("");
 
@@ -68,7 +68,7 @@ const DispatchForm = () => {
             flour,
             free_flour,
             free_10x14,
-            free_paper_bag,
+            free_paperbag,
             free_patok,
             free_vinegar1_5L
           };
@@ -228,7 +228,7 @@ const DispatchForm = () => {
         </Form.Group>
         <Form.Group
             className="mb-3"
-            controlId="lpg_100kgs"
+            controlId="lpg_11kgs"
             >
             <Form.Label>LPG 11Kgs</Form.Label>
             <Form.Control
@@ -250,7 +250,7 @@ const DispatchForm = () => {
         </Form.Group>
         <Form.Group
             className="mb-3"
-            controlId="oil_bottle"
+            controlId="oil_litres"
             >
             <Form.Label>Oil in Litres</Form.Label>
             <Form.Control
@@ -316,12 +316,12 @@ const DispatchForm = () => {
         </Form.Group>
         <Form.Group
             className="mb-3"
-            controlId="free_paper_bag"
+            controlId="free_paperbag"
             >
             <Form.Label>Free Paper Bag</Form.Label>
             <Form.Control
             type="text"
-            value={free_paper_bag}
+            value={free_paperbag}
             onChange={(e) => setFreePaperBag(e.target.value)}
             />
         </Form.Group>
