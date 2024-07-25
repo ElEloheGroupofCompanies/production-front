@@ -87,8 +87,14 @@ const DispatchForm = () => {
   return (
     <>
     <ToastContainer />
-    <Card className="p-3">
-        <h1>Dispatch Form</h1>
+    <Card
+        className="mx-auto mt-5 mb-5"
+        style={{ maxWidth: "600px", width: "100%", fontFamily: "serif" }}
+      >
+        <Card.Body>
+          <Card.Title>
+            <h3 className="text-center">Create Dispatch Form</h3>
+          </Card.Title>
         <Form onSubmit={handleCreateDispatchForm}>
         <Form.Group className="mb-3" controlId="date_dispatched">
             <Form.Label>Date Dispatched</Form.Label>
@@ -346,6 +352,7 @@ const DispatchForm = () => {
             Submit
             </Button>
         </Form>
+    </Card.Body>
     </Card>
     </>
   );
