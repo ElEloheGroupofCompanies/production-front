@@ -69,6 +69,7 @@ const DispatchFormPage = () => {
             <th>Free Paper Bag</th>
             <th>Free Patok</th>
             <th>Free Vinegar 1.5L</th>
+            <th>Others Amount</th>
             </tr>
         </thead>
         <tbody>
@@ -101,6 +102,7 @@ const DispatchFormPage = () => {
               <td>{dispatchforms.free_paperbag}</td>
               <td>{dispatchforms.free_patok}</td>
               <td>{dispatchforms.free_vinegar1_5L}</td>
+              <td>{dispatchforms.others_amount}</td>
             </tr>
           ))}
         </tbody>

@@ -39,6 +39,7 @@ const DispatchForm = () => {
     const [free_paperbag, setFreePaperBag] = useState("");
     const [free_patok, setFreePatok] = useState("");
     const [free_vinegar1_5L, setFreeVinegar15L] = useState("");
+    const [others_amount, setOthersAmount] = useState("");
 
     async function handleCreateDispatchForm(e) {
         e.preventDefault();
@@ -70,8 +71,10 @@ const DispatchForm = () => {
             free_10x14,
             free_paperbag,
             free_patok,
-            free_vinegar1_5L
+            free_vinegar1_5L,
+            others_amount,
           };
+          
           const { data } = await api.post("/dispatchform", body);
           toast.success(data.message);
           navigate("/dispatchformpage");
@@ -345,6 +348,17 @@ const DispatchForm = () => {
             type="text"
             value={free_vinegar1_5L}
             onChange={(e) => setFreeVinegar15L(e.target.value)}
+            />
+        </Form.Group>
+        <Form.Group
+            className="mb-3"
+            controlId="others_amount"
+            >
+            <Form.Label>Others Amount</Form.Label>
+            <Form.Control
+            type="text"
+            value={others_amount}
+            onChange={(e) => setOthersAmount(e.target.value)}
             />
         </Form.Group>
             <Button variant="primary" type="submit">
