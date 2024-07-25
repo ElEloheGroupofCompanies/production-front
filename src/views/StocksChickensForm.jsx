@@ -19,7 +19,7 @@ const StocksChicken = () => {
   const [dispatch_PM, setDispatchPM] = useState("");
   const [ending_stocks, setEndingStocks] = useState("");
   const [ending_whole_chicken, setEndingWholeChicken] = useState("");
-  const [total_marinated_chickens, setTotalMarinatedChickens] = useState("");
+  const [total_marinated_chicken, setTotalMarinatedChicken] = useState("");
 
   async function handleCreateStocksChicken(e) {
     e.preventDefault();
@@ -31,6 +31,8 @@ const StocksChicken = () => {
         dispatch_AM,
         dispatch_PM,
         ending_stocks,
+        ending_whole_chicken,
+        total_marinated_chicken,
       };
       const { data } = await api.post("/stockschicken", body);
       toast.success(data.message);
@@ -112,8 +114,8 @@ const StocksChicken = () => {
               </Form.Group>
             <Form.Group
               className="mb-3"
-              value={total_marinated_chickens}
-              onChange={(e) => setTotalMarinatedChickens(e.target.value)}
+              value={total_marinated_chicken}
+              onChange={(e) => setTotalMarinatedChicken(e.target.value)}
             >
               <Form.Label>Total Marinated Chickens</Form.Label>
               <Form.Control type="text" placeholder="Enter Total Marinated Chickens" />
