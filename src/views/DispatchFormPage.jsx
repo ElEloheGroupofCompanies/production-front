@@ -10,7 +10,7 @@ const DispatchFormPage = () => {
     const { getItem } = useLocalStorage();
     const token = getItem("token");
     const api = useApi(token);
-    const [DispatchForms, setDispatchForms] = useState([]);
+    const [DispatchForm, setDispatchForm] = useState([]);
     const [user, _] = useState(JSON.parse(getItem("user") || null));
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const DispatchFormPage = () => {
     async function getDispatchForms() {
       try {
         const { data } = await api.get("/dispatchforms");
-        setDispatchForms(data);
+        setDispatchForm(data);
       } catch (error) {
         console.error("Error fetching dispatch form:", error);
       }
@@ -72,7 +72,7 @@ const DispatchFormPage = () => {
             </tr>
         </thead>
         <tbody>
-          {DispatchForms.map((dispatchforms) => (
+          {DispatchForm.map((dispatchforms) => (
             <tr key={dispatchforms.id}>
               <td>{dispatchforms.date_dispatched}</td>
               <td>{dispatchforms.location}</td>
@@ -98,7 +98,7 @@ const DispatchFormPage = () => {
               <td>{dispatchforms.flour}</td>
               <td>{dispatchforms.free_flour}</td>
               <td>{dispatchforms.free_10x14}</td>
-              <td>{dispatchforms.free_paper_bag}</td>
+              <td>{dispatchforms.free_paperbag}</td>
               <td>{dispatchforms.free_patok}</td>
               <td>{dispatchforms.free_vinegar1_5L}</td>
             </tr>
