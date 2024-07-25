@@ -10,7 +10,7 @@ const DispatchFormPage = () => {
     const { getItem } = useLocalStorage();
     const token = getItem("token");
     const api = useApi(token);
-    const [DispatchForm, setDispatchForm] = useState([]);
+    const [DispatchForm, setDispatchForms] = useState([]);
     const [user, _] = useState(JSON.parse(getItem("user") || null));
 
     useEffect(() => {
