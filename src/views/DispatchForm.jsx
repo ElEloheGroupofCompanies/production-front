@@ -20,7 +20,7 @@ const DispatchForm = () => {
     const [lumpia, setLumpia] = useState("");
     const [inasal, setInasal] = useState("");
     const [lechon_manok, setLechonManok] = useState("");
-    const [vinegar1_5L, setVinegar1_5L] = useState("");
+    const [vinegar1_5L, setVinegar15L] = useState("");
     const [paper_bag_1, setPaperBag1] = useState("");
     const [paper_bag_2, setPaperBag2] = useState("");
     const [paper_bag_3, setPaperBag3] = useState("");
@@ -32,14 +32,14 @@ const DispatchForm = () => {
     const [lpg_11kgs, setLpg11kgs] = useState("");
     const [oil_can, setOilCan] = useState("");
     const [oil_litres, setOilLitres] = useState("");
-    const [dishwashing1_5L, setDishwashing1_5L] = useState("");
+    const [dishwashing1_5L, setDishwashing15L] = useState("");
     const [dishwashing_1L, setDishwashing1L] = useState("");
     const [flour, setFlour] = useState("");
     const [free_flour, setFreeFlour] = useState("");
     const [free_10x14, setFree10x14] = useState("");
     const [free_paper_bag, setFreePaperBag] = useState("");
     const [free_patok, setFreePatok] = useState("");
-    const [free_vinegar1_5L, setFreeVinegar1_5L] = useState("");
+    const [free_vinegar1_5L, setFreeVinegar15L] = useState("");
 
     async function handleCreateDispatchForm(e) {
         e.preventDefault();
@@ -157,7 +157,7 @@ const DispatchForm = () => {
             <Form.Control
             type="text"
             value={vinegar1_5L}
-            onChange={(e) => setVinegar1_5L(e.target.value)}
+            onChange={(e) => setVinegar15L(e.target.value)}
             />
         </Form.Group>
         <Form.Group className="mb-3" controlId="paper_bag_1">
@@ -268,7 +268,7 @@ const DispatchForm = () => {
             <Form.Control
             type="text"
             value={dishwashing1_5L}
-            onChange={(e) => setDishwashing1_5L(e.target.value)}
+            onChange={(e) => setDishwashing15L(e.target.value)}
             />
         </Form.Group>
         <Form.Group
@@ -345,7 +345,7 @@ const DispatchForm = () => {
             <Form.Control
             type="text"
             value={free_vinegar1_5L}
-            onChange={(e) => setFreeVinegar1_5L(e.target.value)}
+            onChange={(e) => setFreeVinegar15L(e.target.value)}
             />
         </Form.Group>
             <Button variant="primary" type="submit">

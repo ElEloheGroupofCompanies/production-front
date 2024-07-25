@@ -72,35 +72,35 @@ const DispatchFormPage = () => {
             </tr>
         </thead>
         <tbody>
-          {DispatchForm.map((dispatchform) => (
-            <tr key={dispatchform.id}>
-              <td>{dispatchform.date_dispatched}</td>
-              <td>{dispatchform.location}</td>
-              <td>{dispatchform.dispatch_AM}</td>
-              <td>{dispatchform.dispatch_PM}</td>
-              <td>{dispatchform.lumpia}</td>
-              <td>{dispatchform.inasal}</td>
-              <td>{dispatchform.lechon_manok}</td>
-              <td>{dispatchform.vinegar1_5L}</td>
-              <td>{dispatchform.paper_bag_1}</td>
-              <td>{dispatchform.paper_bag_2}</td>
-              <td>{dispatchform.paper_bag_3}</td>
-              <td>{dispatchform.paper_bag_4}</td>
-              <td>{dispatchform.cellophane_10x14}</td>
-              <td>{dispatchform.patok}</td>
-              <td>{dispatchform.manila_paper}</td>
-              <td>{dispatchform.lpg_50kgs}</td>
-              <td>{dispatchform.lpg_11kgs}</td>
-              <td>{dispatchform.oil_can}</td>
-              <td>{dispatchform.oil_litres}</td>
-              <td>{dispatchform.dishwashing1_5L}</td>
-              <td>{dispatchform.dishwashing_1L}</td>
-              <td>{dispatchform.flour}</td>
-              <td>{dispatchform.free_flour}</td>
-              <td>{dispatchform.free_10x14}</td>
-              <td>{dispatchform.free_paper_bag}</td>
-              <td>{dispatchform.free_patok}</td>
-              <td>{dispatchform.free_vinegar1_5L}</td>
+          {DispatchForm.map((dispatchforms) => (
+            <tr key={dispatchforms.id}>
+              <td>{dispatchforms.date_dispatched}</td>
+              <td>{dispatchforms.location}</td>
+              <td>{dispatchforms.dispatch_AM}</td>
+              <td>{dispatchforms.dispatch_PM}</td>
+              <td>{dispatchforms.lumpia}</td>
+              <td>{dispatchforms.inasal}</td>
+              <td>{dispatchforms.lechon_manok}</td>
+              <td>{dispatchforms.vinegar1_5L}</td>
+              <td>{dispatchforms.paper_bag_1}</td>
+              <td>{dispatchforms.paper_bag_2}</td>
+              <td>{dispatchforms.paper_bag_3}</td>
+              <td>{dispatchforms.paper_bag_4}</td>
+              <td>{dispatchforms.cellophane_10x14}</td>
+              <td>{dispatchforms.patok}</td>
+              <td>{dispatchforms.manila_paper}</td>
+              <td>{dispatchforms.lpg_50kgs}</td>
+              <td>{dispatchforms.lpg_11kgs}</td>
+              <td>{dispatchforms.oil_can}</td>
+              <td>{dispatchforms.oil_litres}</td>
+              <td>{dispatchforms.dishwashing1_5L}</td>
+              <td>{dispatchforms.dishwashing_1L}</td>
+              <td>{dispatchforms.flour}</td>
+              <td>{dispatchforms.free_flour}</td>
+              <td>{dispatchforms.free_10x14}</td>
+              <td>{dispatchforms.free_paper_bag}</td>
+              <td>{dispatchforms.free_patok}</td>
+              <td>{dispatchforms.free_vinegar1_5L}</td>
             </tr>
           ))}
         </tbody>
