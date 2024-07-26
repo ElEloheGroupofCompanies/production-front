@@ -44,7 +44,7 @@ const LeftOversProducePage = () => {
             <tr>
               <th>Number of Fried Chicken</th>
               <th>Number of Lumpia</th>
-              <th>Dispatched_to</th>
+              <th>Dispatched to</th>
             </tr>
           </thead>
           <tbody>
