@@ -93,28 +93,6 @@ const StocksIngredients = () => {
               <Form.Label>Ending Stocks</Form.Label>
               <Form.Control type="text" placeholder="Enter Ending Stocks" />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={ending_whole_chicken}
-              onChange={(e) => setEndingWholeChicken(e.target.value)}
-            >
-              <Form.Label>Ending Stocks for Whole Chicken</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Ending Stocks for Whole Chicken"
-              />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={total_marinated_chickens}
-              onChange={(e) => setTotalMarinatedChickens(e.target.value)}
-            >
-              <Form.Label>Total Marinated Chickens</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Total Marinated Chickens"
-              />
-            </Form.Group>
             <Button variant="primary" type="submit">
               Submit
             </Button>
