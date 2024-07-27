@@ -42,6 +42,7 @@ const LeftoverIngredientPage = () => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
+              <th>Date</th>
               <th>Ingredient Name</th>
               <th>Quantity</th>
               <th>Unit Price</th>
@@ -51,6 +52,7 @@ const LeftoverIngredientPage = () => {
           <tbody>
             {LeftoverIngredients.map((leftoveringredients) => (
               <tr key={leftoveringredients.id}>
+                <td>{leftoveringredients.date_added}</td>
                 <td>{leftoveringredients.ingredient_name}</td>
                 <td>{leftoveringredients.quantity}</td>
                 <td>{leftoveringredients.unit_price}</td>

@@ -12,6 +12,7 @@ const LeftoverIngredient = () => {
   const setItem = useLocalStorage();
   const api = useApi(token);
   const navigate = useNavigate();
+  const [date_added, setDateAdded] = useState("");
   const [ingredient_name, setIngredientName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [unit_price, setUnitPrice] = useState("");
@@ -21,6 +22,7 @@ const LeftoverIngredient = () => {
     e.preventDefault();
     try {
       const body = {
+        date_added,
         ingredient_name,
         quantity,
         unit_price,
@@ -49,6 +51,13 @@ const LeftoverIngredient = () => {
             <h3 className="text-center">Create Leftover Ingredient</h3>
           </Card.Title>
           <Form onSubmit={handleCreateLeftoverIngredient}>
+            <Form.Group
+              className="mb-3"
+              onChange={(e) => setDateAdded(e.target.value)}
+            >
+              <Form.Label>Date Added</Form.Label>
+              <Form.Control type="text" placeholder="Enter Date Added" />
+            </Form.Group>
             <Form.Group
               className="mb-3"
               onChange={(e) => setIngredientName(e.target.value)}

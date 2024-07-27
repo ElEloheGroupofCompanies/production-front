@@ -12,6 +12,7 @@ const LeftoversProduce = () => {
   const setItem = useLocalStorage();
   const api = useApi(token);
   const navigate = useNavigate();
+  const [date_added, setDateAdded] = useState("");
   const [number_of_fried_chicken, setNumberOfFriedChicken] = useState("");
   const [number_of_lumpia_produce, setNumberOfLumpiaProduce] = useState("");
   const [dispatched_to, setDispatchedTo] = useState("");
@@ -20,6 +21,7 @@ const LeftoversProduce = () => {
     e.preventDefault();
     try {
       const body = {
+        date_added,
         number_of_fried_chicken,
         number_of_lumpia_produce,
         dispatched_to,
@@ -47,6 +49,14 @@ const LeftoversProduce = () => {
             <h3 className="text-center">Create Leftover Produce</h3>
           </Card.Title>
           <Form onSubmit={handleCreateLeftoversProduce}>
+            <Form.Group
+              className="mb-3"
+              value={date_added}
+              onChange={(e) => setDateAdded(e.target.value)}
+            >
+              <Form.Label>Date Added</Form.Label>
+              <Form.Control type="text" placeholder="Enter Date Added" />
+            </Form.Group>
             <Form.Group
               className="mb-3"
               value={number_of_fried_chicken}

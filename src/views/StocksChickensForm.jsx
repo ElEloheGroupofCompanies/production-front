@@ -12,6 +12,7 @@ const StocksChicken = () => {
   const setItem = useLocalStorage();
   const api = useApi(token);
   const navigate = useNavigate();
+  const [date_added, setDateAdded] = useState("");
   const [chicken_kilo_types, setChickenKiloType] = useState("");
   const [beginning_stocks, setBeginningStocks] = useState("");
   const [chops_made, setChopsMade] = useState("");
@@ -25,6 +26,7 @@ const StocksChicken = () => {
     e.preventDefault();
     try {
       const body = {
+        date_added,
         chicken_kilo_types,
         beginning_stocks,
         chops_made,
@@ -57,6 +59,14 @@ const StocksChicken = () => {
             <h3 className="text-center">Create Stocks for Chicken</h3>
           </Card.Title>
           <Form onSubmit={handleCreateStocksChicken}>
+            <Form.Group
+              className="mb-3"
+              value={date_added}
+              onChange={(e) => setDateAdded(e.target.value)}
+            >
+              <Form.Label>Date Added</Form.Label>
+              <Form.Control type="date" placeholder="Enter Date Added" />
+            </Form.Group>
             <Form.Group
               className="mb-3"
               value={chicken_kilo_types}

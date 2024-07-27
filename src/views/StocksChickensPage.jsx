@@ -42,6 +42,7 @@ const StocksChickensPage = () => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
+              <th>Date</th>
               <th>Chicken Kilo Category</th>
               <th>Beginning Stocks</th>
               <th>Total Chops Made</th>
@@ -55,6 +56,7 @@ const StocksChickensPage = () => {
           <tbody>
             {StocksChicken.map((stockschickens) => (
               <tr key={stockschickens.id}>
+                <td>{stockschickens.date_added}</td>
                 <td>{stockschickens.chicken_kilo_types}</td>
                 <td>{stockschickens.beginning_stocks}</td>
                 <td>{stockschickens.chops_made}</td>

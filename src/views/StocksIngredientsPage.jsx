@@ -42,6 +42,7 @@ const StocksIngredientsPage = () => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
+              <th>Date</th>
               <th>Ingredient Name</th>
               <th>Beginning Stocks</th>
               <th>Dispatch AM</th>
@@ -52,6 +53,7 @@ const StocksIngredientsPage = () => {
           <tbody>
             {StocksIngredients.map((stocksingredients) => (
               <tr key={stocksingredients.id}>
+                <td>{stocksingredients.date_added}</td>
                 <td>{stocksingredients.ingredients_name}</td>
                 <td>{stocksingredients.beginning_stocks}</td>
                 <td>{stocksingredients.dispatch_AM}</td>

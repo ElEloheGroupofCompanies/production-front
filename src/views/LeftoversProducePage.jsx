@@ -42,6 +42,7 @@ const LeftOversProducePage = () => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
+              <th>Date</th>
               <th>Number of Fried Chicken</th>
               <th>Number of Lumpia</th>
               <th>Dispatched to</th>
@@ -50,6 +51,7 @@ const LeftOversProducePage = () => {
           <tbody>
             {LeftoversProduce.map((leftoversproduce) => (
               <tr key={leftoversproduce.id}>
+                <td>{leftoversproduce.date_added}</td>
                 <td>{leftoversproduce.number_of_fried_chicken}</td>
                 <td>{leftoversproduce.number_of_lumpia_produce}</td>
                 <td>{leftoversproduce.dispatched_to}</td>
