@@ -56,7 +56,7 @@ const LeftoverIngredient = () => {
               onChange={(e) => setDateAdded(e.target.value)}
             >
               <Form.Label>Date Added</Form.Label>
-              <Form.Control type="text" placeholder="Enter Date Added" />
+              <Form.Control type="date" placeholder="Enter Date Added" />
             </Form.Group>
             <Form.Group
               className="mb-3"
