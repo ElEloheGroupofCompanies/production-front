@@ -14,15 +14,13 @@ const DispatchFormPage = () => {
     const [DispatchForm, setDispatchForm] = useState([]);
     const [user, _] = useState(JSON.parse(getItem("user") || null));
     const [searchTerm, setSearchTerm] = useState("");
-    const [page, setPage] = useState(1);
-    const [first, setFirst] = useState(0);
-    const [totalItemsPerPage, setTotalItemsPerPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(10);
 
     async function getDispatchForms() {
       try {
-        const { data } = await api.get("/dispatchforms");
-        setDispatchForm(data.total);
-        setTotalItemsPerPage(data.total);
+        const { data } = await api.get(`/dispatchforms?page=${currentPage}`);
+        setDispatchForm(data);
       } catch (error) {
         console.error("Error fetching dispatch form:", error);
       }
@@ -30,9 +28,12 @@ const DispatchFormPage = () => {
     
     useEffect(() => {
       getDispatchForms();
-      return () => {};
-    }, []);
+    }, [currentPage]);
     
+    const handlePageChange = (pageNumber) => {
+      setCurrentPage(pageNumber);
+    };
+
   return (
     <div>
       <Container className="mt-5 mb-5">
@@ -113,14 +114,22 @@ const DispatchFormPage = () => {
           ))}
         </tbody>
       </Table>
-      <Pagination className="m-1 d-flex justify-content-center">
-        <Pagination.First onClick={() => setFirst(totalItemsPerPage - totalItemsPerPage)} />
-        <Pagination.Prev  onClick={() => setFirst(first - 1)} />
-        <Pagination.Item onClick={() => setFirst(0)}>{1}</Pagination.Item>
-        <Pagination.Next onClick={() => setFirst(first + 1)} />
-        <Pagination.Last onClick={() => setFirst(totalItemsPerPage - 1)} />
+
+      <Pagination>
+      <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} />
+      {[...Array(Math.ceil(DispatchForm.length / itemsPerPage)).keys()].map(
+        (pageNumber) => (
+          <Pagination.Item
+            key={pageNumber}
+            active={currentPage === pageNumber + 1}
+            onClick={() => handlePageChange(pageNumber + 1)}
+          >
+            {pageNumber + 1}
+          </Pagination.Item>
+        )
+      )}
+      <Pagination.Next onClick={() => handlePageChange(currentPage + 1)} />
     </Pagination>
-      
     </Container>
   </div>
 
