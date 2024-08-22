@@ -20,7 +20,7 @@ const DispatchFormPage = () => {
 
     async function getDispatchForms() {
       try {
-        const { data } = await api.get(`/dispatchforms?page=${page}`);
+        const { data } = await api.get("/dispatchforms");
         setDispatchForm(data.total);
         setTotalItemsPerPage(data.total);
       } catch (error) {
