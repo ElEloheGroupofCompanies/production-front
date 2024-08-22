@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { Container } from "react-bootstrap";
+import Pagination from "react-bootstrap/Pagination";
 
 const DispatchFormPage = () => {
     const { getItem } = useLocalStorage();
@@ -12,21 +13,26 @@ const DispatchFormPage = () => {
     const api = useApi(token);
     const [DispatchForm, setDispatchForm] = useState([]);
     const [user, _] = useState(JSON.parse(getItem("user") || null));
-
-    useEffect(() => {
-      getDispatchForms();
-      return () => {};
-    }, []);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [page, setPage] = useState(1);
+    const [first, setFirst] = useState(0);
+    const [totalItemsPerPage, setTotalItemsPerPage] = useState(0);
 
     async function getDispatchForms() {
       try {
-        const { data } = await api.get("/dispatchforms");
-        setDispatchForm(data);
+        const { data } = await api.get(`/dispatchforms?page=${page}`);
+        setDispatchForm(data.total);
+        setTotalItemsPerPage(data.total);
       } catch (error) {
         console.error("Error fetching dispatch form:", error);
       }
     }
-
+    
+    useEffect(() => {
+      getDispatchForms();
+      return () => {};
+    }, []);
+    
   return (
     <div>
       <Container className="mt-5 mb-5">
@@ -38,7 +44,7 @@ const DispatchFormPage = () => {
         >
           Add Dispatch Form
         </Button>
-
+        
         <Table responsive striped bordered hover>
           <thead>
             <tr>
@@ -107,6 +113,14 @@ const DispatchFormPage = () => {
           ))}
         </tbody>
       </Table>
+      <Pagination className="m-1 d-flex justify-content-center">
+        <Pagination.First onClick={() => setFirst(totalItemsPerPage - totalItemsPerPage)} />
+        <Pagination.Prev  onClick={() => setFirst(first - 1)} />
+        <Pagination.Item onClick={() => setFirst(0)}>{1}</Pagination.Item>
+        <Pagination.Next onClick={() => setFirst(first + 1)} />
+        <Pagination.Last onClick={() => setFirst(totalItemsPerPage - 1)} />
+    </Pagination>
+      
     </Container>
   </div>
 
